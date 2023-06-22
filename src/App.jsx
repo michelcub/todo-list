@@ -6,26 +6,26 @@ function App() {
 
   const [newTask, setNewTask] = useState();
 
-   const createListOnApi = () => {
-     fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList2', {
-       method: "POST",
-       headers: {
-         'Content-Type': 'application/json'
-       },
-       body: JSON.stringify(newTask)
-     })
-     .then(res => {
-       if(!res.ok&&!res.status == '400'){
-         throw Error(`Hay un error ${res.status}`)
-       }
-       return res.json()
-     })
-     .then(data => data)
-     .catch( err => console.log(err));
-   }
+  //  const createListOnApi = () => {
+  //    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList', {
+  //      method: "POST",
+  //      headers: {
+  //        'Content-Type': 'application/json'
+  //      },
+  //      body: JSON.stringify(newTask)
+  //    })
+  //    .then(res => {
+  //      if(!res.ok&&!res.status == '400'){
+  //        throw Error(`Hay un error ${res.status}`)
+  //      }
+  //      return res.json()
+  //    })
+  //    .then(data => data)
+  //    .catch( err => console.log(err));
+  //  }
 
   const updateList = ()=> {
-    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList2', {
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList', {
       method: "PUT",
       headers: {'Content-Type' : 'application/json'},
       body: [JSON.stringify(newTask)]
@@ -33,7 +33,7 @@ function App() {
   }
 
   const callApiTodo = () => {
-    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList2', {
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList', {
       method: "GET",
       headers: {'Content-Type': 'application/json'},
     })
@@ -41,7 +41,7 @@ function App() {
     .then(res => setNewTask([...res]))
     .catch(err => console.log(err))
   }
-  useEffect(()=>createListOnApi,[createListOnApi])
+  
   useEffect(()=>callApiTodo,[]);
 
   const handleCreateNewTask = (e) => {
