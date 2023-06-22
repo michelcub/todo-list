@@ -7,7 +7,7 @@ function App() {
   const [newTask, setNewTask] = useState();
 
    const createListOnApi = () => {
-     fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList', {
+     fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList2', {
        method: "POST",
        headers: {
          'Content-Type': 'application/json'
