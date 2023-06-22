@@ -25,7 +25,7 @@ function App() {
    }
 
   const updateList = ()=> {
-    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList', {
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList2', {
       method: "PUT",
       headers: {'Content-Type' : 'application/json'},
       body: [JSON.stringify(newTask)]
@@ -33,7 +33,7 @@ function App() {
   }
 
   const callApiTodo = () => {
-    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList', {
+    fetch('https://assets.breatheco.de/apis/fake/todos/user/fastTodoList2', {
       method: "GET",
       headers: {'Content-Type': 'application/json'},
     })
